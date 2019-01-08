@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.game {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	background-color: #000;
+	background: red;
+	background-position: center;
+	background-repeat: no-repeat;
+	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 45s ease infinite;
+	-moz-animation: Gradient 45s ease infinite;
+	animation: Gradient 45s ease infinite;
+}
+
+	.game .header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		height: 12vmin;
+		width: 80vmin;
+		font-size: 8vmin;
+		box-sizing: border-box;
+		color: #360670;
+		flex-grow: 0;
+		border-radius: 2vmin;
+		background: transparent;
+		margin: 20px;
+	}
+
+	.game .header .restart {
+		width: 20vmin;
+		-webkit-appearance: none;
+		color: #fff;
+		border-radius: 1vmin;
+		border: none;
+		cursor: pointer;		
+		background: linear-gradient(135deg, #3bade3 , #576fe6 , #9844b7 , #ff357f );
+		background-size: 400% 400%;
+		-webkit-animation: Gradient 25s ease infinite;
+		-moz-animation: Gradient 25s ease infinite;
+		animation: Gradient 25s ease infinite;		
+		font-size: 4vmin;
+	}
+
+	.game .field {
+		background: rgba(255,255,255, 0.5);
+		position: relative;
+		z-index: 1;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		height: 80vmin;
+		width: 80vmin;
+		flex-shrink: 1;
+		border-radius: 2vmin;		
+    padding: 5px;
+	}
+
+		.game .field .cell {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 1%;
+			box-sizing: border-box;
+			background-color: rgba(255, 255, 255, 0.2);
+			border-radius: 2vmin;
+			font-size: 10vmin;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			transition: background 0.2s ease-in-out, height 0.2s, width 0.2s, margin 0.2s;
+			background: linear-gradient(45deg, #3bade3 , #576fe6 , #9844b7 , #ff357f );
+			background-size: 400% 400%;
+			-webkit-animation: Gradient 15s ease infinite;
+			-moz-animation: Gradient 15s ease infinite;
+			animation: Gradient 15s ease infinite;
+		}
+
+		.game .field .cell.hightlight {
+			margin: 0;
+		}
+
+		@keyframes hide {
+			from {opacity: 1;}
+			to {opacity: 0;}
+		}
+
+		.game .field .cell.animate {
+			position: absolute;
+			margin: 0;
+			transition: left 0.2s, top 0.2s;
+			z-index: -1;
+			animation-name: hide;
+			animation-duration: 0.2s;
+			animation-iteration-count: 1;
+			animation-fill-mode: forwards;
+		}
+
+		.game .field .cell[data-ship="2"] {
+			background: #fff735;
+		}
+
+		.game .field .cell[data-ship="4"] {
+			background: #ffcb35;
+		}
+
+		.game .field .cell[data-ship="8"] {
+			background: #ffa135;
+		}
+
+		.game .field .cell[data-ship="16"] {
+			background: #ff7435;
+		}
+
+		.game .field .cell[data-ship="32"] {
+			background: #d82735;
+		}
+
+		.game .field .cell[data-ship="64"] {
+			background: #b21f35;
+		}
+
+		.game .field .cell[data-ship="128"] {
+			background: #681e7e;
+		}
+
+		.game .field .cell[data-ship="256"] {
+			background: #7d3cb5;
+		}
+
+		.game .field .cell[data-ship="512"] {
+			background: #06a9fc;
+		}
+
+		.game .field .cell[data-ship="1024"] {
+			background: #0079e7;
+		}
+
+		.game .field .cell[data-ship="2048"] {
+			background: #0052a5;
+		}
+
+		.game .field .cell[data-ship="4096"] {
+			background: #16dd36;
+		}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}

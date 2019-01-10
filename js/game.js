@@ -36,6 +36,12 @@ class Game {
 			className: 'field',
 			parentElement: gameFieldElement
 		});
+		
+		this.headerElement = createAndAppend({
+			className: 'power',
+			parentElement: gameFieldElement,
+			value: 'Power by Temirov Max'
+		});
 
 
 		this.restart();

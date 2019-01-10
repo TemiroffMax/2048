@@ -14,7 +14,8 @@ class Game {
 		this.headerElement = createAndAppend({
 			className: 'header',
 			parentElement: gameFieldElement
-		});
+		}); 
+		
 
 		this.ratingElement = createAndAppend({
 			className: 'rating',
